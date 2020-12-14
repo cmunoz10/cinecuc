@@ -1,0 +1,37 @@
+<div class="col-md-4 mx-auto">
+  <div class="card text-center">
+    <div class="card-header">
+      <h5>Agregar una funcion</h3>
+    </div>
+    <div class="card-body">
+      <form action="/notes/nueva-funcion" method="POST">
+        <div class="form-group">
+          <input type="search" name="title" class="form-control" placeholder="Nombre de la pelicula" autofocus/>
+        </div>
+        <div class="form-group">
+          <p>Fecha inicio</p>
+          <input type="date" name="feini" class="form-control" placeholder="Fecha de inicio" autofocus/>
+        </div>
+        <div class="form-group">
+          <p>Fecha fin</p>
+          <input type="date" name="fefin" class="form-control" placeholder="Fecha de fin " autofocus/>
+        </div>
+        <div class="form-group">
+          <input type="text" name="lugar" class="form-control" placeholder="Lugar" autofocus/>
+        </div>
+        <div class="form-group">
+        <div class="form-group">
+          <input type="text" name="direccion" class="form-control" placeholder="Direccion del lugar" autofocus/>
+        </div>
+        <div class="form-group">
+          <input type="number" name="cupos" class="form-control" placeholder="Cupos" autofocus/>
+        <div class="form-group">
+          <button class="btn btn-primary btn-block" type="submit">
+            Guardar
+          </button>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>
+

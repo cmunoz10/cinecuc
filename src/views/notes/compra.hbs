@@ -1,0 +1,106 @@
+<div class=titulo>
+
+ <font face="univers" size="6" color="white"> 
+        <center>Escoge tu pelicula favorita </center>  
+ </font>
+</div>
+
+
+<div class="row">
+    {{#each notes}}
+    
+    <div class="col-md-3">
+        <div class="card">
+            <div class="card-body">
+                <h4 class="card-title d-flex justify-content-between align-items-center">
+                    
+                   
+                    
+                    <h5>Titulo de la pelicula</h5>
+                    {{ title }}
+                </h4>
+                <h5>Fecha de inicio</h5>
+                <p>{{ feini }} </p>
+                <h5>Fecha de finalizacion</h5>
+                <p>{{ fefin }} </p>
+                <h5>Lugar</h5>
+                <p>{{ lugar }} </p>
+                <h5>Direccion</h5>
+                <p>{{ direccion }} </p>
+                <h5>Cupos totales</h5>
+                <p>{{ cupos }} </p>
+
+                <script>
+
+                    var contador = 1;
+                    var time;
+                    var on = false;
+                    var seconds = 0;
+
+
+                    var startTime = function () {
+                        seconds++;
+                        time = setTimeout("startTime()", 1000);
+                        if (seconds >= 10) {
+                            on = false;
+                            clearTimeout(time);
+
+                        }
+
+                        document.getElementById("segundos").value = seconds;
+                    }
+
+
+                    function cambiar() {
+
+                        if (contador > 100) {
+                            document.getElementById('contador').innerHTML = contador + 0;
+                        } else {
+                            document.getElementById('contador').innerHTML = contador += 1;
+                        }
+
+                    }
+                    function nuevo() {
+                        document.getElementById('contador').innerHTML = contador = 0;
+                        on = true;
+                        startTime();
+                        seconds = 0;
+                    }
+
+
+
+                </script>
+
+                <div id="cuadrito">
+                    <center>
+                        <h4>Tickets agregados</h4>
+                        <input type="number" name="ticket" class="form-control" placeholder="Numero de tickets "
+                            autofocus="">
+
+                    </center>
+                    <br />
+
+                    <!-- <input type="button" id="boton" value="Agregar ticket" onClick="cambiar();"-->
+
+
+                    
+                    <button class="btn btn-primary btn-block" type="submit">
+                        Comprar
+                    </button>
+
+
+                </div>
+
+            </div>
+        </div>
+    </div>
+    {{else}}
+    <div class="card mx-auto">
+        <div class="card-body">
+            <h1>Hola, Bienvenido! {{user.name}}</h1>
+            <p clsss="lead">Aun no tienes una funcion seleccionada</p>
+            <a href="/notes/add" class="btn btn-success btn-block">Selecciona una! </a>
+        </div>
+    </div>
+    {{/each}}
+</div>

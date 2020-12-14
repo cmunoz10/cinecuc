@@ -1,0 +1,11 @@
+body {
+    background-image: url("../css/musica-para-cine.png");
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+}
+
+.logo {
+    width: 70%;
+}
